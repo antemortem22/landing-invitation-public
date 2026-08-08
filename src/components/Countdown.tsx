@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useState } from 'react'
-import { eventConfig } from '../config/event'
+import { useMemo } from 'react'
+import { useCountdownSnapshot } from '../hooks/useCountdownSnapshot'
 import {
   formatHeroCountdownUnits,
-  getCountdownSnapshot,
   getHeroCountdownStatusMessage,
   getRsvpCountdownMessage,
 } from '../utils/countdown'
@@ -13,22 +12,6 @@ export function SoftPinkDivider({ className = '' }: { className?: string }) {
       className={`block h-[2px] w-40 min-w-40 max-w-40 bg-[linear-gradient(90deg,rgba(232,160,180,0),rgba(232,160,180,0.9),rgba(232,160,180,0))] ${className}`.trim()}
     />
   )
-}
-
-function useCountdownSnapshot() {
-  const [now, setNow] = useState(() => new Date())
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setNow(new Date())
-    }, 1000)
-
-    return () => {
-      window.clearInterval(timer)
-    }
-  }, [])
-
-  return useMemo(() => getCountdownSnapshot(eventConfig.eventDateTimeIso, now), [now])
 }
 
 export function HeroCountdown() {
@@ -64,11 +47,11 @@ export function HeroCountdown() {
             ))}
           </div>
         </>
-      ) : (
+      ) : snapshot.state === 'started' ? (
         <p className="mx-auto max-w-[30rem] text-[0.96rem] leading-7 text-[var(--color-text-muted)]">
           {statusMessage}
         </p>
-      )}
+      ) : null}
     </div>
   )
 }

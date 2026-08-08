@@ -112,7 +112,7 @@ export function getHeroCountdownStatusMessage(snapshot: CountdownSnapshot) {
   }
 
   if (snapshot.state === 'ended') {
-    return 'Gracias por acompañarnos en un día tan especial.'
+    return 'Gracias por acompañarnos en un momento tan especial.'
   }
 
   return null

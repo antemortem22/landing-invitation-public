@@ -5,9 +5,9 @@ export const eventConfig: EventConfig = {
   inviteeGreeting: 'Bienvenida, Olivia',
   eyebrow: 'CON MUCHO AMOR, TE INVITAMOS AL',
   title: 'Baby Shower',
-  subtitle: '✨ de Olivia ✨',
+  subtitle: 'de Olivia',
   description:
-    'Tu presencia hará este momento aún más especial. Celebremos juntos la llegada de nuestra pequeña Olivia con amor y alegría.',
+    'Tu presencia hara este momento aun mas especial. Celebremos juntos la llegada de nuestra pequena Olivia con amor y alegria.',
   eventDateTimeIso: '2026-07-18T16:30:00-03:00',
   dateLabel: '18 de julio de 2026',
   timeLabel: '16:30 hs',
@@ -17,7 +17,28 @@ export const eventConfig: EventConfig = {
   whatsappNumber: '5491136162830',
   paymentAlias: 'OLIVIA.BABY',
   footerNote:
-    'Gracias por acompañarnos en esta tarde tan especial para nuestra familia.',
-  contactLabel: 'Mamá de Olivia \n +54 9 11 3616-2830',
+    'Gracias por acompanarnos en esta tarde tan especial para nuestra familia.',
+  contactLabel: 'Mama de Olivia \n +54 9 11 3616-2830',
   calendarFile: '/olivia-baby-shower.ics',
+  giftSectionIntro:
+    'Preparamos esta lista con algunas cosas que nos seran utiles para Olivia. Los enlaces son solo referencias para mostrarles el tipo de producto, estilo y colores que nos gustan. No es necesario comprar exactamente el modelo publicado. Pueden elegir uno similar, de otra marca o tienda. Cuando decidan que regalar, les pedimos que lo marquen como elegido para evitar que se repita.',
+  giftSectionLoadError:
+    'No pudimos cargar los regalos reales. Te mostramos una version local.',
+  giftSectionEmptyState: 'Todavia no hay regalos cargados para mostrar.',
+  giftAliasDescription:
+    'Si preferis hacernos un aporte para que nosotros elijamos algo especial para Olivia, podes hacerlo a traves de nuestro alias.',
+  giftAliasCopyAction: 'Copiar alias',
+  giftAliasCopySuccess: 'Alias copiado!',
+  giftAliasCopyError: 'No pudimos copiar el alias. Intenta nuevamente.',
+  rsvpSectionDescription:
+    'Completa tus datos y avisanos por WhatsApp si vas a poder acompanarnos.',
+  rsvpRedirectHint: 'Te vamos a redirigir a WhatsApp para confirmar',
+  rsvpReviewTitle: 'Tu mensaje esta listo',
+  rsvpReviewHint: 'Revisa tu respuesta',
+  rsvpEditAction: 'Editar respuesta',
+  rsvpReviewRedirectHint:
+    'Te vamos a redirigir a WhatsApp con tu respuesta ya armada.',
+  rsvpCalendarHint: 'Sumalo a tu calendario para tener el evento a mano.',
+  rsvpChangeOfMindHint:
+    'Si cambias de opinion, podes escribirnos antes del 1 de julio.',
 }

@@ -35,6 +35,21 @@ export type EventConfig = {
   footerNote: string
   contactLabel: string
   calendarFile: string
+  giftSectionIntro: string
+  giftSectionLoadError: string
+  giftSectionEmptyState: string
+  giftAliasDescription: string
+  giftAliasCopyAction: string
+  giftAliasCopySuccess: string
+  giftAliasCopyError: string
+  rsvpSectionDescription: string
+  rsvpRedirectHint: string
+  rsvpReviewTitle: string
+  rsvpReviewHint: string
+  rsvpEditAction: string
+  rsvpReviewRedirectHint: string
+  rsvpCalendarHint: string
+  rsvpChangeOfMindHint: string
 }
 
 export type RsvpAttendance = 'yes' | 'no'

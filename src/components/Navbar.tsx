@@ -32,6 +32,10 @@ export function Navbar() {
   }, [isOpen])
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return
+    }
+
     const sections = navItems
       .map((item) => ({
         href: item.href,
@@ -45,35 +49,65 @@ export function Navbar() {
       return
     }
 
-    let ticking = false
+    const getClosestSection = () => {
+      if (window.scrollY <= 32) {
+        return sections[0]?.href ?? '#inicio'
+      }
 
-    const updateActiveSection = () => {
-      const scrollPosition = window.scrollY + 120
-      let nextActiveHref = sections[0].href
+      const viewportAnchor = window.innerHeight * 0.35
+      let closestHref = sections[0]?.href ?? '#inicio'
+      let closestDistance = Number.POSITIVE_INFINITY
 
       for (const section of sections) {
-        if (scrollPosition >= section.element.offsetTop) {
-          nextActiveHref = section.href
+        const distance = Math.abs(section.element.getBoundingClientRect().top - viewportAnchor)
+
+        if (distance < closestDistance) {
+          closestDistance = distance
+          closestHref = section.href
         }
       }
 
-      setActiveHref(nextActiveHref)
-      ticking = false
+      return closestHref
     }
 
-    const handleScroll = () => {
-      if (ticking) return
-      ticking = true
-      window.requestAnimationFrame(updateActiveSection)
+    const updateActiveSection = () => {
+      setActiveHref(getClosestSection())
+    }
+
+    let observer: IntersectionObserver | null = null
+
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visibleEntries = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((left, right) => right.intersectionRatio - left.intersectionRatio)
+
+          if (visibleEntries.length > 0) {
+            setActiveHref(`#${visibleEntries[0].target.id}`)
+            return
+          }
+
+          updateActiveSection()
+        },
+        {
+          root: null,
+          rootMargin: '-18% 0px -52% 0px',
+          threshold: [0.1, 0.2, 0.35, 0.5, 0.7],
+        },
+      )
+
+      sections.forEach((section) => observer?.observe(section.element))
     }
 
     updateActiveSection()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    window.addEventListener('resize', handleScroll)
+    window.addEventListener('scroll', updateActiveSection, { passive: true })
+    window.addEventListener('resize', updateActiveSection)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleScroll)
+      observer?.disconnect()
+      window.removeEventListener('scroll', updateActiveSection)
+      window.removeEventListener('resize', updateActiveSection)
     }
   }, [])
 

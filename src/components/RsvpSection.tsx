@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import pinkBow from '../assets/pinkbow.png'
+import { eventConfig } from '../config/event'
 import { RsvpModal } from './RsvpModal'
 import { RsvpCountdownMessage } from './Countdown'
 
@@ -46,11 +47,11 @@ export function RsvpSection() {
           </p>
 
           <h2 className="mt-3 font-serif text-[clamp(2.4rem,5vw,4rem)] leading-none text-[var(--color-text)]">
-            ¿Venís al baby shower?
+            Venis al baby shower?
           </h2>
 
           <p className="mx-auto mt-4 max-w-[36rem] text-[0.95rem] leading-7 text-[var(--color-text-muted)] sm:text-base">
-            Completá tus datos y avisanos por WhatsApp si vas a poder acompañarnos.
+            {eventConfig.rsvpSectionDescription}
           </p>
 
           <div className="mx-auto mt-5 h-[2px] w-40 bg-[linear-gradient(90deg,rgba(232,160,180,0),rgba(232,160,180,0.9),rgba(232,160,180,0))]" />
@@ -63,7 +64,7 @@ export function RsvpSection() {
             onClick={() => setIsOpen(true)}
           >
             <WhatsappMiniIcon />
-            <span>Responder invitación</span>
+            <span>Responder invitacion</span>
           </button>
 
           <div className="mt-5 flex items-center justify-center gap-2 text-[var(--color-text-muted)]">
@@ -71,7 +72,7 @@ export function RsvpSection() {
               <ClockMiniIcon />
             </span>
             <p className="text-[0.94rem] leading-6 sm:text-[0.98rem]">
-              Te vamos a redirigir a WhatsApp para confirmar
+              {eventConfig.rsvpRedirectHint}
             </p>
           </div>
         </div>

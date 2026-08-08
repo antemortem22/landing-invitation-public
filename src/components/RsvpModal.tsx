@@ -355,11 +355,11 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
               </p>
 
               <h4 className="mt-3 font-serif text-[clamp(1.95rem,4vw,2.9rem)] leading-none text-[var(--color-text)]">
-                Tu mensaje esta listo
+                {eventConfig.rsvpReviewTitle}
               </h4>
 
               <p className="mt-3 text-[0.95rem] leading-6 text-[var(--color-text-muted)]">
-                Revisa tu respuesta
+                {eventConfig.rsvpReviewHint}
               </p>
 
               <div className="mt-6 w-full rounded-[22px] border border-[var(--color-border)] bg-[rgba(249,213,229,0.18)] p-4 text-left sm:p-5">
@@ -414,7 +414,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                     Guarda la fecha
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[var(--color-text-muted)]">
-                    Sumalo a tu calendario para tener el evento a mano.
+                    {eventConfig.rsvpCalendarHint}
                   </p>
                   <CalendarButton className="mt-4 w-full sm:w-auto" />
                 </div>
@@ -435,7 +435,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
               )}
 
               <p className="mt-5 text-center text-[0.84rem] leading-5 text-[var(--color-text-muted)] sm:text-sm sm:leading-6">
-                Te vamos a redirigir a WhatsApp con tu respuesta ya armada.
+                {eventConfig.rsvpReviewRedirectHint}
               </p>
 
               <div className="mt-5 flex w-full flex-col items-center gap-3">
@@ -452,7 +452,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                   className="text-[0.95rem] font-semibold text-[var(--color-strawberry)]"
                   onClick={() => setStep('form')}
                 >
-                  Editar respuesta
+                  {eventConfig.rsvpEditAction}
                 </button>
               </div>
               </div>

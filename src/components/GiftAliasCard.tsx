@@ -4,11 +4,11 @@ import { eventConfig } from '../config/event'
 type CopyState = 'idle' | 'success' | 'error'
 
 function StrawberryDot() {
-  return <span className="text-[0.9rem] leading-none">🍓</span>
+  return <span className="block h-2.5 w-2.5 rounded-full bg-[var(--color-strawberry)]" />
 }
 
 function BowDot() {
-  return <span className="text-[0.9rem] leading-none">🎀</span>
+  return <span className="block h-2.5 w-2.5 rounded-full bg-[var(--color-pink-medium)]" />
 }
 
 export function GiftAliasCard() {
@@ -49,11 +49,11 @@ export function GiftAliasCard() {
         </div>
 
         <h3 className="mt-2.5 font-serif text-[2rem] font-bold leading-none text-[var(--color-text)] sm:text-[2.2rem]">
-          Otra forma de acompañarnos 🎀
+          Otra forma de acompanarnos
         </h3>
 
         <p className="mt-2.5 max-w-[38rem] text-[0.95rem] leading-7 text-[var(--color-text-muted)] sm:text-base">
-          Si preferís hacernos un aporte para que nosotros elijamos algo especial para Olivia, podés hacerlo a través de nuestro alias.
+          {eventConfig.giftAliasDescription}
         </p>
 
         <div className="mt-4 flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -67,15 +67,17 @@ export function GiftAliasCard() {
             className="pill-button w-full border border-[rgba(232,160,180,0.45)] bg-[rgba(249,213,229,0.72)] text-[var(--color-text)] shadow-none hover:bg-[rgba(249,213,229,0.88)] sm:w-auto"
             onClick={handleCopyAlias}
           >
-            {copyState === 'success' ? '¡Alias copiado!' : 'Copiar alias'}
+            {copyState === 'success'
+              ? eventConfig.giftAliasCopySuccess
+              : eventConfig.giftAliasCopyAction}
           </button>
         </div>
 
         <p aria-live="polite" className="mt-2.5 min-h-[1.5rem] text-[0.9rem] text-[var(--color-text-muted)]">
           {copyState === 'error'
-            ? 'No pudimos copiar el alias. Intentá nuevamente.'
+            ? eventConfig.giftAliasCopyError
             : copyState === 'success'
-              ? '¡Alias copiado!'
+              ? eventConfig.giftAliasCopySuccess
               : ''}
         </p>
       </div>

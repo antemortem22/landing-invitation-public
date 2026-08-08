@@ -33,8 +33,12 @@ function ChevronRight() {
 
 export function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [visibleCount, setVisibleCount] = useState(() => getVisibleCount(window.innerWidth))
-  const [isDocumentHidden, setIsDocumentHidden] = useState(document.hidden)
+  const [visibleCount, setVisibleCount] = useState(() =>
+    typeof window === 'undefined' ? 1 : getVisibleCount(window.innerWidth),
+  )
+  const [isDocumentHidden, setIsDocumentHidden] = useState(() =>
+    typeof document === 'undefined' ? false : document.hidden,
+  )
   const [isReducedMotion, setIsReducedMotion] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [isManualPauseActive, setIsManualPauseActive] = useState(false)
@@ -44,6 +48,10 @@ export function Gallery() {
   const lastTriggerRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
     function handleResize() {
       setVisibleCount(getVisibleCount(window.innerWidth))
     }
@@ -56,6 +64,10 @@ export function Gallery() {
   }, [])
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return
+    }
+
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     const updatePreference = () => {
       setIsReducedMotion(mediaQuery.matches)
@@ -70,6 +82,10 @@ export function Gallery() {
   }, [])
 
   useEffect(() => {
+    if (typeof document === 'undefined') {
+      return
+    }
+
     const handleVisibilityChange = () => {
       setIsDocumentHidden(document.hidden)
     }
@@ -194,7 +210,7 @@ export function Gallery() {
             >
               {visibleItems.map(({ item, itemIndex }, index) => (
                 <GalleryCard
-                  key={`${item.id}-${currentIndex}-${index}`}
+                  key={item.id}
                   item={item}
                   isPrimary={visibleCount === 3 ? index === 1 : itemIndex === currentIndex}
                   isSecondary={visibleCount === 3 ? index !== 1 : false}

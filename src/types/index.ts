@@ -50,6 +50,7 @@ export type EventConfig = {
   rsvpEditAction: string
   rsvpReviewRedirectHint: string
   rsvpCalendarHint: string
+  rsvpDeadlineHint: string
   rsvpChangeOfMindHint: string
 }
 

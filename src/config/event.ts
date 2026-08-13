@@ -10,7 +10,7 @@ export const eventConfig: EventConfig = {
     'Tu presencia hara este momento aun mas especial. Celebremos juntos la llegada de nuestra pequena Olivia con amor y alegria.',
   eventDayLabel: 'Domingo',
   eventDateTimeIso: '2026-09-20T13:00:00-03:00',
-  dateLabel: '20 de septiembre de 2026',
+  dateLabel: '20 de septiembre',
   timeLabel: '13 hs a 17 hs',
   venue: 'Biblioteca Popular Manuel Belgrano',
   address: 'Diag. Lisandro de la Torre 1736, Berazategui',
@@ -19,7 +19,7 @@ export const eventConfig: EventConfig = {
   paymentAlias: 'MiniSalgadoRios2026',
   footerNote:
     'Gracias por acompanarnos en esta tarde tan especial para nuestra familia.',
-  contactLabel: 'Mama de Olivia \n +54 9 11 3616-2830',
+  contactLabel: 'Mamá de Olivia \n +54 9 11 3616-2830',
   calendarFile: '/olivia-baby-shower.ics',
   giftSectionIntro:
     'Preparamos esta lista con algunas cosas que nos seran utiles para Olivia. Los enlaces son solo referencias para mostrarles el tipo de producto, estilo y colores que nos gustan. No es necesario comprar exactamente el modelo publicado. Pueden elegir uno similar, de otra marca o tienda. Cuando decidan que regalar, les pedimos que lo marquen como elegido para evitar que se repita.',
@@ -42,6 +42,7 @@ export const eventConfig: EventConfig = {
   rsvpReviewRedirectHint:
     'Te vamos a redirigir a WhatsApp con tu respuesta ya armada.',
   rsvpCalendarHint: 'Sumalo a tu calendario para tener el evento a mano.',
+  rsvpDeadlineHint: 'Podes avisarnos hasta el 15 de septiembre.',
   rsvpChangeOfMindHint:
-    'Si cambias de opinion, podes escribirnos antes del 1 de septiembre.',
+    'Si cambias de opinion, podes escribirnos hasta el 15 de septiembre.',
 }

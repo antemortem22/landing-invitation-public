@@ -54,6 +54,10 @@ export function RsvpSection() {
             {eventConfig.rsvpSectionDescription}
           </p>
 
+          <p className="mx-auto mt-2 max-w-[36rem] text-[0.9rem] font-medium leading-6 text-[var(--color-strawberry)] sm:text-[0.95rem]">
+            {eventConfig.rsvpDeadlineHint}
+          </p>
+
           <div className="mx-auto mt-5 h-[2px] w-40 bg-[linear-gradient(90deg,rgba(232,160,180,0),rgba(232,160,180,0.9),rgba(232,160,180,0))]" />
 
           <RsvpCountdownMessage />

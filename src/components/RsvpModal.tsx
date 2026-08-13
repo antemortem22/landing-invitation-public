@@ -279,10 +279,16 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                       <p className="text-center text-[0.86rem] leading-6 text-[rgba(111,102,102,0.72)]">
                         Incluí a los niños si van a asistir
                       </p>
+                      <p className="text-center text-[0.86rem] font-medium leading-6 text-[var(--color-strawberry)]">
+                        {eventConfig.rsvpDeadlineHint}
+                      </p>
                     </div>
                   </div>
                 ) : (
                   <div className="rounded-[24px] border border-[rgba(232,160,180,0.55)] bg-[rgba(255,253,252,0.76)] p-4 shadow-[0_10px_24px_rgba(180,126,120,0.08)]">
+                    <p className="mb-2 text-[0.9rem] font-medium leading-6 text-[var(--color-strawberry)]">
+                      {eventConfig.rsvpDeadlineHint}
+                    </p>
                     <p className="text-[1rem] leading-7 text-[var(--color-text-muted)]">
                       🌸 ¡Gracias por avisarnos! Te vamos a extrañar 💕
                     </p>
@@ -315,7 +321,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                       <p className="text-[0.98rem] leading-8 text-[var(--color-text-muted)]">
                         Si cambiás de opinión, podés escribirnos antes del{' '}
                         <span className="font-semibold text-[var(--color-strawberry)]">
-                          1 de septiembre.
+                          15 de septiembre.
                         </span>
                       </p>
                     </div>
@@ -427,7 +433,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                     <p className="text-[0.98rem] leading-8 text-[var(--color-text-muted)]">
                       Si cambiás de opinión, podés escribirnos antes del{' '}
                       <span className="font-semibold text-[var(--color-strawberry)]">
-                        1 de septiembre.
+                        15 de septiembre.
                       </span>
                     </p>
                   </div>

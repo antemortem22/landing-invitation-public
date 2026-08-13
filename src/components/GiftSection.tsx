@@ -54,6 +54,15 @@ function mapGiftRowToItem(row: GiftRow): GiftItem {
   }
 }
 
+function sortGiftItems(items: GiftItem[]) {
+  return [...items].sort((left, right) => {
+    const leftId = typeof left.id === 'number' ? left.id : Number.MAX_SAFE_INTEGER
+    const rightId = typeof right.id === 'number' ? right.id : Number.MAX_SAFE_INTEGER
+
+    return leftId - rightId
+  })
+}
+
 export function GiftSection() {
   const [filter, setFilter] = useState<GiftFilter>('all')
   const [gifts, setGifts] = useState<GiftItem[]>(initialGifts)
@@ -65,6 +74,31 @@ export function GiftSection() {
 
   useEffect(() => {
     let isMounted = true
+    const giftsChannel = supabase
+      .channel('public:gifts')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'gifts' },
+        (payload) => {
+          setGifts((currentGifts) => {
+            if (payload.eventType === 'DELETE') {
+              return currentGifts.filter((gift) => gift.id !== payload.old.id)
+            }
+
+            const nextGift = mapGiftRowToItem(payload.new as GiftRow)
+            const existingIndex = currentGifts.findIndex((gift) => gift.id === nextGift.id)
+
+            if (existingIndex === -1) {
+              return sortGiftItems([...currentGifts, nextGift])
+            }
+
+            const nextGifts = [...currentGifts]
+            nextGifts[existingIndex] = nextGift
+            return sortGiftItems(nextGifts)
+          })
+        },
+      )
+      .subscribe()
 
     async function loadGifts() {
       setIsLoading(true)
@@ -94,6 +128,7 @@ export function GiftSection() {
 
     return () => {
       isMounted = false
+      void supabase.removeChannel(giftsChannel)
     }
   }, [])
 

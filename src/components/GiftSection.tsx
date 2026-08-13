@@ -7,6 +7,7 @@ import type { GiftFilter, GiftItem } from '../types'
 import { GiftAliasCard } from './GiftAliasCard'
 import { GiftCard } from './GiftCard'
 import { GiftFilters } from './GiftFilters'
+import { GiftImageLightbox } from './GiftImageLightbox'
 import { ReserveGiftModal } from './ReserveGiftModal'
 
 const COLLAPSED_GIFTS_COUNT = 6
@@ -32,7 +33,7 @@ function ChevronDownMini() {
 function filterGifts(gifts: GiftItem[], filter: GiftFilter) {
   switch (filter) {
     case 'available':
-      return gifts.filter((gift) => gift.status === 'available')
+      return gifts.filter((gift) => gift.status === 'available' || gift.status === 'open')
     case 'open':
       return gifts.filter((gift) => gift.status === 'open')
     case 'reserved':
@@ -57,6 +58,7 @@ export function GiftSection() {
   const [filter, setFilter] = useState<GiftFilter>('all')
   const [gifts, setGifts] = useState<GiftItem[]>(initialGifts)
   const [selectedGift, setSelectedGift] = useState<GiftItem | null>(null)
+  const [previewGift, setPreviewGift] = useState<GiftItem | null>(null)
   const [isExpanded, setIsExpanded] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -178,7 +180,12 @@ export function GiftSection() {
         ) : (
           <div className="mx-auto mt-8 grid max-w-[1040px] gap-5 md:grid-cols-2 xl:grid-cols-3">
             {visibleGifts.map((gift) => (
-              <GiftCard key={gift.id} gift={gift} onReserve={setSelectedGift} />
+              <GiftCard
+                key={gift.id}
+                gift={gift}
+                onReserve={setSelectedGift}
+                onImageClick={setPreviewGift}
+              />
             ))}
           </div>
         )}
@@ -212,6 +219,10 @@ export function GiftSection() {
             onClose={() => setSelectedGift(null)}
             onConfirm={handleConfirmGift}
           />
+        ) : null}
+
+        {previewGift ? (
+          <GiftImageLightbox gift={previewGift} onClose={() => setPreviewGift(null)} />
         ) : null}
       </div>
     </section>

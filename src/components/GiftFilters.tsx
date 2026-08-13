@@ -8,7 +8,6 @@ type GiftFiltersProps = {
 const filters: { label: string; value: GiftFilter }[] = [
   { label: 'Todos', value: 'all' },
   { label: 'Disponibles', value: 'available' },
-  { label: 'Abiertos', value: 'open' },
   { label: 'Elegidos', value: 'reserved' },
 ]
 

@@ -49,7 +49,7 @@ export function GiftAliasCard() {
         </div>
 
         <h3 className="mt-2.5 font-serif text-[2rem] font-bold leading-none text-[var(--color-text)] sm:text-[2.2rem]">
-          Otra forma de acompañaros
+          Otra forma de acompañarnos.
         </h3>
 
         <p className="mt-2.5 max-w-[38rem] text-[0.95rem] leading-7 text-[var(--color-text-muted)] sm:text-base">

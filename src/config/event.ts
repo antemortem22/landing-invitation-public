@@ -7,7 +7,7 @@ export const eventConfig: EventConfig = {
   title: 'Baby Shower',
   subtitle: 'de Olivia',
   description:
-    'Tu presencia hara este momento aun mas especial. Celebremos juntos la llegada de nuestra pequena Olivia con amor y alegria.',
+    'Tu presencia hará este momento aún más especial. Celebremos juntos la llegada de nuestra pequeña Olivia con amor y alegría.',
   eventDayLabel: 'Domingo',
   eventDateTimeIso: '2026-09-20T13:00:00-03:00',
   dateLabel: '20 de septiembre',

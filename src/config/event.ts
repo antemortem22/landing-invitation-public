@@ -34,7 +34,7 @@ export const eventConfig: EventConfig = {
   giftAliasCopySuccess: 'Alias copiado!',
   giftAliasCopyError: 'No pudimos copiar el alias. Intenta nuevamente.',
   rsvpSectionDescription:
-    'Completa tus datos y avisanos por WhatsApp si vas a poder acompanarnos.',
+    'Completá tus datos y avisanos por WhatsApp si vas a poder acompañarnos.',
   rsvpRedirectHint: 'Te vamos a redirigir a WhatsApp para confirmar',
   rsvpReviewTitle: 'Tu mensaje esta listo',
   rsvpReviewHint: 'Revisa tu respuesta',

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
+import { CalendarButton } from './CalendarButton'
 import { eventConfig } from '../config/event'
-import { getCalendarFileUrl } from '../utils/calendar'
 
 type DetailItem = {
   title: string
@@ -124,13 +124,13 @@ export function EventDetails() {
                 <div className="mt-2 space-y-1">
                   <p className="text-sm leading-6 text-[var(--color-text-muted)]">{item.helper}</p>
                   {item.helperAction === 'calendar' ? (
-                    <a
-                      href={getCalendarFileUrl()}
+                    <CalendarButton
+                      showIcon={false}
                       className="inline-flex items-center gap-1 text-[0.82rem] font-medium text-[var(--color-pink-medium)] no-underline transition-colors duration-200 hover:text-[var(--color-strawberry)]"
                     >
                       Agregar al calendario
                       <ArrowRightMini />
-                    </a>
+                    </CalendarButton>
                   ) : null}
                   {item.helperHref && item.helperLabel ? (
                     <a

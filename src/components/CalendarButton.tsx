@@ -4,6 +4,7 @@ import { getCalendarFileUrl } from '../utils/calendar'
 type CalendarButtonProps = {
   children?: ReactNode
   className?: string
+  showIcon?: boolean
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'children'>
 
 function shouldDownloadCalendarFile() {
@@ -35,6 +36,7 @@ function CalendarMiniIcon() {
 export function CalendarButton({
   children = 'Agregar al calendario',
   className = '',
+  showIcon = true,
   ...props
 }: CalendarButtonProps) {
   const shouldDownload = shouldDownloadCalendarFile()
@@ -46,9 +48,11 @@ export function CalendarButton({
       download={shouldDownload}
       {...props}
     >
-      <span className="text-[var(--color-pink-medium)]">
-        <CalendarMiniIcon />
-      </span>
+      {showIcon ? (
+        <span className="text-[var(--color-pink-medium)]">
+          <CalendarMiniIcon />
+        </span>
+      ) : null}
       {children}
     </a>
   )

@@ -47,7 +47,7 @@ export function RsvpSection() {
           </p>
 
           <h2 className="mt-3 font-serif text-[clamp(2.4rem,5vw,4rem)] leading-none text-[var(--color-text)]">
-            Venis al baby shower?
+            Venís al baby shower?
           </h2>
 
           <p className="mx-auto mt-4 max-w-[36rem] text-[0.95rem] leading-7 text-[var(--color-text-muted)] sm:text-base">

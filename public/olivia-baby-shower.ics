@@ -1,6 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
 PRODID:-//Baby Shower Olivia//ES
+X-WR-CALNAME:Baby Shower de Olivia
 BEGIN:VEVENT
 UID:olivia-baby-shower-20260920@example.com
 DTSTAMP:20260625T120000Z
@@ -9,5 +12,8 @@ DTEND:20260920T200000Z
 SUMMARY:Baby Shower de Olivia
 DESCRIPTION:Celebremos juntos la llegada de Olivia.
 LOCATION:Biblioteca Popular Manuel Belgrano\, Diag. Lisandro de la Torre 1736\, Berazategui
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+URL:https://maps.app.goo.gl/j1xck2fqDGwa8haz9
 END:VEVENT
 END:VCALENDAR

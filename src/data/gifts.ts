@@ -13,7 +13,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Cuna convertible',
     description: 'Madera blanca con detalles nordicos, incluye colchon y protector.',
     referenceUrl: 'https://example.com/cuna',
-    reserved: false,
+    status: 'available',
   },
   {
     id: 'stroller',
@@ -21,7 +21,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Cochecito de paseo',
     description: 'Plegable y ultraliviano, color beige. Apto desde recien nacido.',
     referenceUrl: 'https://example.com/cochecito',
-    reserved: true,
+    status: 'reserved',
   },
   {
     id: 'outfit',
@@ -29,7 +29,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Set de ropa (0-3m)',
     description: 'Bodys de algodon organico en tonos pastel. Pack de 5 piezas.',
     referenceUrl: 'https://example.com/ropa',
-    reserved: false,
+    status: 'available',
   },
   {
     id: 'chair',
@@ -37,7 +37,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Silla de lactancia',
     description: 'Butaca ergonomica con apoyapies. Tapizado en velvet rosado.',
     referenceUrl: 'https://example.com/silla',
-    reserved: false,
+    status: 'available',
   },
   {
     id: 'bath',
@@ -45,7 +45,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Banera + set de bano',
     description: 'Banera ergonomica con soporte y set de productos naturales.',
     referenceUrl: 'https://example.com/banera',
-    reserved: true,
+    status: 'reserved',
   },
   {
     id: 'mobile',
@@ -53,7 +53,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Movil musical',
     description: 'Nubes, estrellas y lunas en tela suave. Melodias relajantes incluidas.',
     referenceUrl: 'https://example.com/mobile',
-    reserved: false,
+    status: 'available',
   },
   {
     id: 'bottles',
@@ -61,7 +61,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Mamaderas anti-colicos',
     description: 'Set practico para los primeros meses, con diseno simple y delicado.',
     referenceUrl: 'https://example.com/mamaderas',
-    reserved: false,
+    status: 'available',
   },
   {
     id: 'blankets',
@@ -69,7 +69,7 @@ export const initialGifts: GiftItem[] = [
     name: 'Mantas de muselina',
     description: 'Suaves, respirables y en colores delicados para el dia a dia.',
     referenceUrl: 'https://example.com/mantas',
-    reserved: false,
+    status: 'open',
   },
   {
     id: 'lamp',
@@ -77,6 +77,6 @@ export const initialGifts: GiftItem[] = [
     name: 'Lampara para cuarto',
     description: 'Luz calida y suave para acompanar las noches de Olivia.',
     referenceUrl: 'https://example.com/lampara',
-    reserved: false,
+    status: 'available',
   },
 ]

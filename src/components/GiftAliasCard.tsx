@@ -49,7 +49,7 @@ export function GiftAliasCard() {
         </div>
 
         <h3 className="mt-2.5 font-serif text-[2rem] font-bold leading-none text-[var(--color-text)] sm:text-[2.2rem]">
-          Otra forma de acompanarnos
+          Otra forma de acompañaros
         </h3>
 
         <p className="mt-2.5 max-w-[38rem] text-[0.95rem] leading-7 text-[var(--color-text-muted)] sm:text-base">
@@ -72,6 +72,10 @@ export function GiftAliasCard() {
               : eventConfig.giftAliasCopyAction}
           </button>
         </div>
+
+        <p className="mt-2 text-[0.85rem] leading-6 text-[var(--color-text-muted)]">
+          {eventConfig.giftAliasAccountHolderNote}
+        </p>
 
         <p aria-live="polite" className="mt-2.5 min-h-[1.5rem] text-[0.9rem] text-[var(--color-text-muted)]">
           {copyState === 'error'

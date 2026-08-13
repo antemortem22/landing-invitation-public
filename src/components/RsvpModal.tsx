@@ -315,7 +315,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                       <p className="text-[0.98rem] leading-8 text-[var(--color-text-muted)]">
                         Si cambiás de opinión, podés escribirnos antes del{' '}
                         <span className="font-semibold text-[var(--color-strawberry)]">
-                          1 de julio.
+                          1 de septiembre.
                         </span>
                       </p>
                     </div>
@@ -427,7 +427,7 @@ export function RsvpModal({ onClose }: RsvpModalProps) {
                     <p className="text-[0.98rem] leading-8 text-[var(--color-text-muted)]">
                       Si cambiás de opinión, podés escribirnos antes del{' '}
                       <span className="font-semibold text-[var(--color-strawberry)]">
-                        1 de julio.
+                        1 de septiembre.
                       </span>
                     </p>
                   </div>

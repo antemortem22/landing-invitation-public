@@ -17,7 +17,7 @@ type GiftRow = {
   description: string | null
   image_url: string | null
   reference_url: string | null
-  reserved: boolean
+  status: 'available' | 'reserved' | 'open'
   created_at: string
 }
 
@@ -32,9 +32,11 @@ function ChevronDownMini() {
 function filterGifts(gifts: GiftItem[], filter: GiftFilter) {
   switch (filter) {
     case 'available':
-      return gifts.filter((gift) => !gift.reserved)
+      return gifts.filter((gift) => gift.status === 'available')
+    case 'open':
+      return gifts.filter((gift) => gift.status === 'open')
     case 'reserved':
-      return gifts.filter((gift) => gift.reserved)
+      return gifts.filter((gift) => gift.status === 'reserved')
     default:
       return gifts
   }
@@ -47,7 +49,7 @@ function mapGiftRowToItem(row: GiftRow): GiftItem {
     name: row.name,
     description: row.description?.trim() || 'Sin descripcion disponible por ahora.',
     referenceUrl: row.reference_url?.trim() || undefined,
-    reserved: row.reserved,
+    status: row.status,
   }
 }
 
@@ -68,7 +70,7 @@ export function GiftSection() {
 
       const { data, error } = await supabase
         .from('gifts')
-        .select('id, name, description, image_url, reference_url, reserved, created_at')
+        .select('id, name, description, image_url, reference_url, status, created_at')
         .order('created_at', { ascending: true })
 
       if (!isMounted) {
@@ -113,9 +115,9 @@ export function GiftSection() {
     if (typeof gift.id === 'number') {
       const { data, error } = await supabase
         .from('gifts')
-        .update({ reserved: true })
+        .update({ status: 'reserved' })
         .eq('id', gift.id)
-        .eq('reserved', false)
+        .eq('status', 'available')
         .select('id')
         .maybeSingle()
 
@@ -130,7 +132,7 @@ export function GiftSection() {
 
     setGifts((currentGifts) =>
       currentGifts.map((currentGift) =>
-        currentGift.id === gift.id ? { ...currentGift, reserved: true } : currentGift,
+        currentGift.id === gift.id ? { ...currentGift, status: 'reserved' } : currentGift,
       ),
     )
   }

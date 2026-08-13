@@ -225,9 +225,6 @@ export function GalleryLightbox({
           <h3 className="mt-2 font-serif text-[2rem] font-bold italic leading-none sm:text-[2.2rem]">
             {activeItem.title}
           </h3>
-          <p className="mt-2 max-w-[36rem] text-[0.95rem] leading-6 text-[rgba(255,253,252,0.82)]">
-            {activeItem.description}
-          </p>
         </div>
 
         {hasMultipleItems ? (

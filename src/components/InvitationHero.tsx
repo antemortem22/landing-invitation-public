@@ -57,7 +57,7 @@ function ArrowRightMini() {
 const detailItems: DetailItem[] = [
   {
     icon: <CalendarIcon />,
-    value: `Sabado, ${eventConfig.dateLabel}`,
+    value: `${eventConfig.eventDayLabel}, ${eventConfig.dateLabel}`,
   },
   {
     icon: <ClockIcon />,

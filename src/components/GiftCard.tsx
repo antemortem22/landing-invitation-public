@@ -16,8 +16,10 @@ function ArrowRightMini() {
 
 export function GiftCard({ gift, onReserve }: GiftCardProps) {
   const primaryLink = gift.referenceUrl
+  const isReserved = gift.status === 'reserved'
+  const isOpen = gift.status === 'open'
 
-  if (gift.reserved) {
+  if (isReserved) {
     return (
       <article className="card-surface relative flex h-full flex-col overflow-hidden rounded-[28px] border-[rgba(232,160,180,0.4)] bg-[rgba(254,246,240,0.92)] p-0 shadow-[0_14px_32px_rgba(180,126,120,0.12)]">
         <span className="absolute right-3 top-3 z-10 rounded-full bg-[var(--color-sage)] px-3 py-1 text-[0.74rem] font-semibold text-[var(--color-warm-white)]">
@@ -57,6 +59,12 @@ export function GiftCard({ gift, onReserve }: GiftCardProps) {
 
   return (
     <article className="card-surface group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-[28px] border-[rgba(232,160,180,0.5)] bg-[rgba(254,246,240,0.98)] p-0 shadow-[0_14px_32px_rgba(180,126,120,0.12)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(232,160,180,0.95)] hover:shadow-[0_24px_46px_rgba(180,126,120,0.2),0_0_0_1px_rgba(232,160,180,0.3)]">
+      {isOpen ? (
+        <span className="absolute right-3 top-3 z-10 rounded-full bg-[rgba(249,213,229,0.96)] px-3 py-1 text-[0.74rem] font-semibold text-[var(--color-strawberry)]">
+          Abierto
+        </span>
+      ) : null}
+
       <div className="overflow-hidden rounded-t-[28px]">
         <img
           src={gift.image}
@@ -91,13 +99,23 @@ export function GiftCard({ gift, onReserve }: GiftCardProps) {
             <span />
           )}
 
-          <button
-            type="button"
-            className="min-h-[38px] shrink-0 rounded-full bg-[rgba(249,213,229,0.9)] px-4 py-2 text-[0.68rem] font-semibold whitespace-nowrap text-[var(--color-text)] shadow-[inset_0_0_0_1px_rgba(232,160,180,0.18)] transition-all duration-200 group-hover:bg-[rgba(220,120,154,0.92)] group-hover:text-[var(--color-warm-white)] group-hover:shadow-[0_10px_22px_rgba(200,85,120,0.18)] sm:px-5 sm:text-[0.72rem]"
-            onClick={() => onReserve(gift)}
-          >
-            Elegir este regalo
-          </button>
+          {isOpen ? (
+            <button
+              type="button"
+              disabled
+              className="min-h-[38px] shrink-0 cursor-default rounded-full bg-[rgba(255,240,244,0.96)] px-4 py-2 text-[0.68rem] font-semibold whitespace-nowrap text-[var(--color-strawberry)] shadow-[inset_0_0_0_1px_rgba(232,160,180,0.18)] sm:px-5 sm:text-[0.72rem]"
+            >
+              Regalo abierto
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="min-h-[38px] shrink-0 rounded-full bg-[rgba(249,213,229,0.9)] px-4 py-2 text-[0.68rem] font-semibold whitespace-nowrap text-[var(--color-text)] shadow-[inset_0_0_0_1px_rgba(232,160,180,0.18)] transition-all duration-200 group-hover:bg-[rgba(220,120,154,0.92)] group-hover:text-[var(--color-warm-white)] group-hover:shadow-[0_10px_22px_rgba(200,85,120,0.18)] sm:px-5 sm:text-[0.72rem]"
+              onClick={() => onReserve(gift)}
+            >
+              Elegir este regalo
+            </button>
+          )}
         </div>
       </div>
     </article>

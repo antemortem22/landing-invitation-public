@@ -46,10 +46,6 @@ export function GalleryCard({
         <h3 className="font-serif text-[1.55rem] font-bold italic leading-none text-[var(--color-text)] sm:text-[1.7rem]">
           {item.title}
         </h3>
-
-        <p className="text-[0.84rem] leading-5 text-[var(--color-text-muted)] sm:text-[0.86rem]">
-          {item.description}
-        </p>
       </div>
     </article>
   )

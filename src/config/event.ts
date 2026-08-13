@@ -8,14 +8,15 @@ export const eventConfig: EventConfig = {
   subtitle: 'de Olivia',
   description:
     'Tu presencia hara este momento aun mas especial. Celebremos juntos la llegada de nuestra pequena Olivia con amor y alegria.',
-  eventDateTimeIso: '2026-07-18T16:30:00-03:00',
-  dateLabel: '18 de julio de 2026',
-  timeLabel: '16:30 hs',
+  eventDayLabel: 'Domingo',
+  eventDateTimeIso: '2026-09-20T13:00:00-03:00',
+  dateLabel: '20 de septiembre de 2026',
+  timeLabel: '13 hs a 17 hs',
   venue: 'Biblioteca Popular Manuel Belgrano',
   address: 'Diag. Lisandro de la Torre 1736, Berazategui',
   mapsUrl: 'https://maps.app.goo.gl/j1xck2fqDGwa8haz9',
   whatsappNumber: '5491136162830',
-  paymentAlias: 'OLIVIA.BABY',
+  paymentAlias: 'MiniSalgadoRios2026',
   footerNote:
     'Gracias por acompanarnos en esta tarde tan especial para nuestra familia.',
   contactLabel: 'Mama de Olivia \n +54 9 11 3616-2830',
@@ -27,6 +28,8 @@ export const eventConfig: EventConfig = {
   giftSectionEmptyState: 'Todavia no hay regalos cargados para mostrar.',
   giftAliasDescription:
     'Si preferis hacernos un aporte para que nosotros elijamos algo especial para Olivia, podes hacerlo a traves de nuestro alias.',
+  giftAliasAccountHolderNote:
+    'Es Personal Pay, a nombre de Victoria Celeste Salgado.',
   giftAliasCopyAction: 'Copiar alias',
   giftAliasCopySuccess: 'Alias copiado!',
   giftAliasCopyError: 'No pudimos copiar el alias. Intenta nuevamente.',
@@ -40,5 +43,5 @@ export const eventConfig: EventConfig = {
     'Te vamos a redirigir a WhatsApp con tu respuesta ya armada.',
   rsvpCalendarHint: 'Sumalo a tu calendario para tener el evento a mano.',
   rsvpChangeOfMindHint:
-    'Si cambias de opinion, podes escribirnos antes del 1 de julio.',
+    'Si cambias de opinion, podes escribirnos antes del 1 de septiembre.',
 }

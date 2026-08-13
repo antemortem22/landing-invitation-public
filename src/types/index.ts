@@ -2,7 +2,6 @@ export type GalleryItem = {
   id: string
   image: string
   title: string
-  description: string
   alt: string
 }
 
@@ -12,10 +11,10 @@ export type GiftItem = {
   name: string
   description: string
   referenceUrl?: string
-  reserved: boolean
+  status: 'available' | 'reserved' | 'open'
 }
 
-export type GiftFilter = 'all' | 'available' | 'reserved'
+export type GiftFilter = 'all' | 'available' | 'reserved' | 'open'
 
 export type EventConfig = {
   babyName: string
@@ -24,6 +23,7 @@ export type EventConfig = {
   title: string
   subtitle: string
   description: string
+  eventDayLabel: string
   eventDateTimeIso: string
   dateLabel: string
   timeLabel: string
@@ -39,6 +39,7 @@ export type EventConfig = {
   giftSectionLoadError: string
   giftSectionEmptyState: string
   giftAliasDescription: string
+  giftAliasAccountHolderNote: string
   giftAliasCopyAction: string
   giftAliasCopySuccess: string
   giftAliasCopyError: string

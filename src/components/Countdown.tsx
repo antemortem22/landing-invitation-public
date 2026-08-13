@@ -20,13 +20,17 @@ export function HeroCountdown() {
   const statusMessage = getHeroCountdownStatusMessage(snapshot)
   const shouldShowNumericCountdown = snapshot.state === 'before' || snapshot.state === 'today'
   const liveMessage = snapshot.state === 'today' ? '¡Es hoy!' : statusMessage
+  const statusClassName =
+    snapshot.state === 'today'
+      ? 'mb-4 inline-flex items-center rounded-full border border-[rgba(141,171,141,0.32)] bg-[rgba(141,171,141,0.14)] px-5 py-2 font-serif text-[1.35rem] font-semibold tracking-[0.04em] text-[var(--color-sage)] shadow-[0_10px_24px_rgba(141,171,141,0.12)] sm:text-[1.55rem]'
+      : 'mb-3 text-[0.86rem] font-medium uppercase tracking-[0.18em] text-[var(--color-sage)]'
 
   return (
     <div className="mt-5 w-full max-w-[540px] text-center">
       {liveMessage ? <p className="sr-only" aria-live="polite">{liveMessage}</p> : null}
 
       {statusMessage && snapshot.state !== 'before' ? (
-        <p className="mb-3 text-[0.86rem] font-medium uppercase tracking-[0.18em] text-[var(--color-sage)]">
+        <p className={statusClassName}>
           {snapshot.state === 'today' ? '¡Es hoy!' : statusMessage}
         </p>
       ) : null}
@@ -47,10 +51,6 @@ export function HeroCountdown() {
             ))}
           </div>
         </>
-      ) : snapshot.state === 'started' ? (
-        <p className="mx-auto max-w-[30rem] text-[0.96rem] leading-7 text-[var(--color-text-muted)]">
-          {statusMessage}
-        </p>
       ) : null}
     </div>
   )

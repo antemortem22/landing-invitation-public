@@ -1,4 +1,3 @@
-import { BackgroundMusic } from './components/BackgroundMusic'
 import { EventDetails } from './components/EventDetails'
 import { Footer } from './components/Footer'
 import { Gallery } from './components/Gallery'
@@ -12,7 +11,6 @@ function App() {
     <div className="min-h-screen bg-[var(--color-cream)] text-[var(--color-text)]">
       <div className="page-background" aria-hidden="true" />
       <Navbar />
-      <BackgroundMusic />
       <main className="relative">
         <InvitationHero />
         <Gallery />

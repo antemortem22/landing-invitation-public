@@ -14,7 +14,7 @@ export function Footer() {
           {eventConfig.footerNote}
         </p>
         <p className="mt-2 text-[0.58rem] uppercase tracking-[0.16em] text-[var(--color-pink-medium)] md:text-[0.64rem]">
-          Hecho con amor para Olivia
+          Hecho con amor para Luna
         </p>
       </div>
     </footer>

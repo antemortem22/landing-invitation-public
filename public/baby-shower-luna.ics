@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//Baby Shower Luna//ES
+X-WR-CALNAME:Baby Shower de Luna
+BEGIN:VEVENT
+UID:baby-shower-luna-20261114@example.com
+DTSTAMP:20260813T120000Z
+DTSTART:20261114T190000Z
+DTEND:20261114T230000Z
+SUMMARY:Baby Shower de Luna
+DESCRIPTION:Celebremos juntos la llegada de Luna.
+LOCATION:Salon Jardin Magnolia\, Av. del Sol 1234\, Buenos Aires
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+URL:https://maps.google.com/?q=Av.+del+Sol+1234,+Buenos+Aires
+END:VEVENT
+END:VCALENDAR

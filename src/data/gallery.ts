@@ -1,64 +1,44 @@
+import galleryCelebration from '../assets/gallery/gallery-celebration.svg'
+import galleryNursery from '../assets/gallery/gallery-nursery.svg'
+import galleryStory from '../assets/gallery/gallery-story.svg'
+import heroImage from '../assets/hero.png'
 import type { GalleryItem } from '../types'
 
 export const galleryItems: GalleryItem[] = [
   {
     id: 'gallery-1',
-    image: '/pareja-revelacion.jpg',
-    title: 'Empezando a imaginarte',
-    alt: 'Foto de la pareja en la revelacion del embarazo',
-  },
-  {
-    id: 'gallery-4',
-    image: '/panza00.jpg',
-    title: 'Ya no pasabas desapercibida',
-    alt: 'Foto del embarazo con la panza al aire libre',
-  },
-  {
-    id: 'gallery-7',
-    image: '/eco00.jpg',
-    title: 'Mirándote por primera vez',
-    alt: 'Ecografia del bebe',
+    image: heroImage,
+    title: 'Portada conceptual',
+    alt: 'Ilustracion principal de la invitacion',
   },
   {
     id: 'gallery-2',
-    image: '/revelacion-torta.jpg',
-    title: 'La celebracion',
-    alt: 'Foto de la torta y la decoracion de la revelacion',
-  },
-  {
-    id: 'gallery-6',
-    image: '/panza02.jpg',
-    title: 'Cada día más cerca',
-    alt: 'Foto del embarazo en primer plano',
-  },
-  {
-    id: 'gallery-8',
-    image: '/eco01.jpg',
-    title: 'Pie de empanada como mamá',
-    alt: 'Segunda ecografia del bebe',
+    image: galleryStory,
+    title: 'Historia de bienvenida',
+    alt: 'Ilustracion decorativa de la historia del evento',
   },
   {
     id: 'gallery-3',
-    image: '/revelacion.jpg',
-    title: 'El momento en que todo se reveló',
-    alt: 'Foto de la revelacion del embarazo',
+    image: galleryCelebration,
+    title: 'Momento de celebracion',
+    alt: 'Ilustracion decorativa de una celebracion de baby shower',
+  },
+  {
+    id: 'gallery-4',
+    image: galleryNursery,
+    title: 'Inspiracion del espacio',
+    alt: 'Ilustracion decorativa del cuarto del bebe',
   },
   {
     id: 'gallery-5',
-    image: '/panza01.jpg',
-    title: 'Creciendo juntas',
-    alt: 'Foto del embarazo con pose de perfil',
+    image: galleryStory,
+    title: 'Recuerdos de muestra',
+    alt: 'Ilustracion conceptual para la galeria',
   },
   {
-    id: 'gallery-9',
-    image: '/eco02.jpg',
-    title: '¿A quién te parecés más?',
-    alt: 'Tercera ecografia del bebe',
-  },
-  {
-    id: 'gallery-10',
-    image: '/mocasines.jpg',
-    title: 'Tus primeras cositas',
-    alt: 'Foto de unos mocasines de bebe',
+    id: 'gallery-6',
+    image: galleryCelebration,
+    title: 'Cierre visual',
+    alt: 'Ilustracion decorativa de cierre para la galeria',
   },
 ]

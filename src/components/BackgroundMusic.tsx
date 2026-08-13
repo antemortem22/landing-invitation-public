@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const AUDIO_SRC = '/One%20Direction%20-%20Olivia.mp3'
+const AUDIO_SRC = ''
 const DEFAULT_VOLUME = 0.14
 
 function PlayIcon() {
@@ -144,8 +144,8 @@ export function BackgroundMusic() {
             {hasError
               ? 'Musica no disponible'
               : isPlaying
-                ? 'Pausar Olivia'
-                : 'Reproducir Olivia'}
+                ? 'Pausar musica'
+                : 'Reproducir musica'}
           </span>
         </span>
       </button>
